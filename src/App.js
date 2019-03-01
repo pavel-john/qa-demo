@@ -42,6 +42,9 @@ class App extends Component {
               <button onClick={this.onNumberSet}>Set</button>
               <input type="number" onChange={this.numberUpdate} value={this.state.numberField} />
             </p>
+            <p>
+              <button onClick={this.props.onAsync}>Async</button>
+            </p>
           </div>
         </header>
       </div>
@@ -56,6 +59,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   onAdd: () => ({ type: "COUNTER_ADD" }),
   onSet: value => ({ type: "COUNTER_SET", payload: value }),
+  onAsync: () => ({ type: "COUNTER_ASYNC" }),
 };
 
 const connector = connect(mapStateToProps, mapDispatchToProps);
