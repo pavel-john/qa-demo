@@ -16,7 +16,11 @@ class App extends Component {
 
   numberUpdate = event => {
     const number = parseInt(event.target.value);
-    this.setState({ numberField: number });
+    if (isNaN(number)) {
+      this.setState({ numberField: '' });
+    } else {
+      this.setState({ numberField: number });
+    }
   }
 
   onNumberSet = () => {

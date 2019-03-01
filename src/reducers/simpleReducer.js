@@ -6,9 +6,6 @@ const defaultState = {
 export default (currentState = defaultState, action) => {
   const { payload, type } = action;
   const nextState = { ...currentState };
-
-  console.log(action);
-
   switch (type) {
     case 'COUNTER_ADD':
       nextState.counter = currentState.counter + 1;
